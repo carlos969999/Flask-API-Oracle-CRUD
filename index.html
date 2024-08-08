@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de clientes</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/script.js"></script>
+</head>
+
+<body onload="recarregarClientes()">
+    <h1>Gerenciamento de clientes</h1>
+    <button onclick="adicionar()">Adicionar</button>
+    <table id="table-customers">
+        <thead>
+            <tr>
+                <th>Id Cliente</th>
+                <th>Nome</th>
+                <th>Sexo</th>
+                <th>Email</th>
+                <th>Data de Nascimento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas serão adicionadas dinamicamente -->
+        </tbody>
+    </table>
+
+    <div id="container-modal">
+        <form id="form-modal" onsubmit="return false">
+            <div class="form-group">
+                <label for="id_cliente">Id Cliente</label>
+                <input type="number" name="id_cliente" id="id_cliente" />
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome_cliente" id="nome_cliente" />
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <select name="sexo" id="sexo">
+                    <option value="F">Feminino</option>
+                    <option value="M">Masculino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+            </div>
+
+            <div class="form-group">
+                <label for="data_nascimento">Data de Nascimento</label>
+                <input type="date" name="data_nascimento" id="data_nascimento" />
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" onclick="salvar()">Salvar</button>
+                <button type="button" onclick="cancelar()" id="botao-cancelar">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
